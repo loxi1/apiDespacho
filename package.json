@@ -1,0 +1,25 @@
+{
+  "name": "api",
+  "version": "1.0.0",
+  "description": "Prueba de un Api",
+  "main": "functions/server.js",
+  "type": "module",
+  "scripts": {
+    "build": "netlify deploy --prod",
+    "start": "node functions/server.js"
+  },
+  "author": "Loxi1",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.1",
+    "glob": "^11.0.0",
+    "npm": "^10.9.1",
+    "serverless-http": "^3.2.0",
+    "vercel": "^39.1.2"
+  },
+  "devDependencies": {
+    "netlify-cli": "^17.38.0"
+  }
+}
