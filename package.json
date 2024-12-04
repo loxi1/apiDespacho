@@ -10,5 +10,18 @@
     "@types/express": "^5.0.0",
     "express": "^4.21.1",
     "serverless-http": "^3.2.0"
-  }
+  },
+  "devDependencies": {
+    "esbuild": "^0.24.0"
+  },
+  "compilerOptions": {
+    "target": "ES2020",
+    "module": "CommonJS",
+    "moduleResolution": "Node",
+    "outDir": "./netlify/functions",
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true
+  },
+  "include": ["api.ts"]
 }
