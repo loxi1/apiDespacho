@@ -1,5 +1,5 @@
 [build]
-  command = "npm install typescript --save-dev && npm install && npm run build
+  command = "npm install typescript --save-dev && npm install && npm run build"
   publish = "netlify/functions"
 
 [functions]
