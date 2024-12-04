@@ -82,12 +82,5 @@ router.get('/', (req: Request, res: Response) => {
 // Usa el router en la base /despacho
 app.use('/despacho', router);
 
-//Solo para el local
-if (process.env.NODE_ENV !== 'production') {
-    app.listen(PORT, () => {
-        console.log(`Servidor corriendo en http://localhost:${PORT}`);
-    });
-}
-
 // Exportar como función Lambda
 export const handler = serverless(app);
