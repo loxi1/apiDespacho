@@ -81,6 +81,7 @@ router.get('/', (req: Request, res: Response) => {
 
 // Usa el router en la base /despacho
 app.use('/despacho', router);
+}
 
 // Exportar como función Lambda
 export const handler = serverless(app);
