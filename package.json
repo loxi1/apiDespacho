@@ -5,9 +5,8 @@
   "description": "probar por favor",
   "main": "api.ts",
   "scripts": {
-    "build": "tsc",
-    "start": "node netlify/functions/api.js",
-    "netlify:deploy": "netlify deploy"
+    "build": "npx tsc",
+    "start": "node netlify/functions/api.js"
   },
   "dependencies": {
     "@netlify/functions": "^2.8.2",
