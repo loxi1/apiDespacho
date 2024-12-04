@@ -5,7 +5,7 @@
   "description": "probar por favor",
   "main": "api.ts",
   "scripts": {
-    "build": "tsc",
+    "build": "npx tsc",
     "start": "node netlify/functions/api.js",
     "netlify:deploy": "netlify deploy"
   },
