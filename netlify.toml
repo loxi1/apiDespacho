@@ -1,5 +1,5 @@
 [build]
-  command = "npm install -g typescript && npm install && ./node_modules/.bin/tsc"
+  command = "npm install && npm run build"
   publish = "netlify/functions"
 
 [functions]
