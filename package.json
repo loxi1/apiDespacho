@@ -1,18 +1,28 @@
 {
+  "name": "api",
   "type": "module",
+  "version": "1.0.0",
+  "description": "probar por favor",
+  "main": "api.ts",
   "scripts": {
-    "build": "tsc",
+    "build": "npx tsc",
     "start": "node netlify/functions/api.js",
     "netlify:deploy": "netlify deploy"
   },
   "dependencies": {
     "@netlify/functions": "^2.8.2",
-    "@types/express": "^5.0.0",
+    "@types/cors": "^2.8.17",
+    "@types/express": "^4.17.21",
+    "@types/express-serve-static-core": "^5.0.2",
+    "@types/node": "^22.10.1",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
     "express": "^4.21.1",
     "serverless-http": "^3.2.0"
   },
   "devDependencies": {
-    "esbuild": "^0.24.0"
+    "esbuild": "^0.24.0",
+    "typescript": "^5.7.2"
   },
   "compilerOptions": {
     "target": "ES2020",
@@ -23,5 +33,7 @@
     "esModuleInterop": true,
     "skipLibCheck": true
   },
-  "include": ["api.ts"]
+  "include": [
+    "api.ts"
+  ]
 }

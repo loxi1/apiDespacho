@@ -1,22 +1,16 @@
-"use strict";
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.handler = void 0;
-const express_1 = __importDefault(require("express"));
-const cors_1 = __importDefault(require("cors"));
-const dotenv_1 = __importDefault(require("dotenv"));
-const serverless_http_1 = __importDefault(require("serverless-http"));
+import express from 'express';
+import cors from 'cors';
+import dotenv from 'dotenv';
+import serverless from 'serverless-http';
 // Cargar las variables de entorno
-dotenv_1.default.config();
+dotenv.config();
 const PORT = process.env.PORT || 3000;
 const bear_token = process.env.BEAR_TOKEN || "Q29mYXF1aW5vNjU0MTIzIQ==";
-const app = (0, express_1.default)();
+const app = express();
 // Middleware para habilitar CORS
-app.use((0, cors_1.default)()); // Habilita CORS para todos los dominios
+app.use(cors()); // Habilita CORS para todos los dominios
 // Middlewares
-app.use(express_1.default.json());
+app.use(express.json());
 // Middleware de autenticación Bearer
 const authenticateBearer = (req, res, next) => {
     const authHeader = req.headers.authorization;
@@ -37,10 +31,10 @@ const authenticateBearer = (req, res, next) => {
         });
     }
     // Continúa con la solicitud si el token es válido
-    next();
+    next(); // Solo llamamos a next si no hemos respondido con un código
 };
 // Rutas protegidas
-const router = express_1.default.Router();
+const router = express.Router();
 // Ruta POST protegida con autenticación Bearer
 router.post('/registro', authenticateBearer, (req, res) => {
     const { po, cantidad, empresa, local } = req.body;
@@ -77,4 +71,4 @@ if (process.env.NODE_ENV !== 'production') {
     });
 }
 // Exportar como función Lambda
-exports.handler = (0, serverless_http_1.default)(app);
+export const handler = serverless(app);
